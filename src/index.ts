@@ -1,5 +1,6 @@
 import { search, sort } from "./binary.js";
 import { getBalance } from "./eth-balance.js";
+import { getTrait } from "./nft-trait.js";
 const main = async () => {
   const input = [45, 56, 78, 1, 34, 98, 10];
   console.log("Task 1: Binary Search");
@@ -17,6 +18,15 @@ const main = async () => {
   console.log("Wallet input:", wallet);
   const bal = await getBalance(wallet);
   console.log(`Balance: ${bal} ETH`);
+  console.log("Task 3: NFT Traits");
+  const contractAddress = "0xBd3531dA5CF5857e7CfAA92426877b022e612cf8";
+  const tokenId = "3233";
+  const traits = await getTrait(contractAddress, tokenId);
+  console.log("All NFT Traits:", traits);
+  const head = traits.find(
+    (t: Record<string, string>) => t?.trait_type === "Head"
+  );
+  console.log("Head Trait:", head);
 };
 
 main()
