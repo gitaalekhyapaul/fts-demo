@@ -1,10 +1,9 @@
 {
   "name": "fts-demo",
-  "packageManager": "yarn@4.9.2",
   "dependencies": {
     "alchemy-sdk": "^3.6.2",
     "dotenv": "^17.2.1",
-    "ethers": "5.7",
+    "ethers": "5.7.2",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
@@ -13,7 +12,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "watch": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "dev": "tsc-watch --onSuccess \"node dist/index.js\"",
     "start": "yarn build && node dist/index.js"
   },
   "engines": {
